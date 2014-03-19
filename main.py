@@ -730,6 +730,9 @@ def create_score(line):
   if "web-dl" in line: score += 20
   if "hdtv" in line: score += 10
   if "efnet" in line: score += 1 # efnet group posts are generally good
+  for key, value in SCORE.iteritems():
+    if key in line:
+      score += value
   return score
 
 
